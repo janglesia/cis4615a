@@ -5,11 +5,11 @@
 *   
 *   Rule 08. Visibility and Atomicity (VNA)
 *   VNA00-J. Ensure visibility when accessing shared primitive variables
-*   NON-COMPLIANT CODE
+*   COMPLIANT SOLUTION
 */
 
 final class R08_VNA00_J implements Runnable {
-    private boolean done = false;
+    private volatile boolean done = false;
     @Override public void run() {
         while (!done) {
             try {
